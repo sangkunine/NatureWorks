@@ -1,0 +1,718 @@
+@import url('/css/ui.main.css');
+
+button {
+	color: #555;
+	background-color: #ddd;
+	border: 0px;
+	padding: 5px 8px;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: none;
+}
+
+	button:hover {
+		background-color: #fff;
+	}
+
+	button.selected {
+		background-color: #fff;
+	}
+
+input, textarea {
+	border: 1px solid transparent;
+	color: #444;
+}
+
+input.Number {
+	color: #fff!important;
+	font-size: 12px;
+	border: 0px;
+	padding: 2px;
+	cursor: col-resize;
+}
+
+select {
+	color: #111;
+	background-color: #ddd;
+	border: 0px;
+	text-transform: uppercase;
+	cursor: pointer;
+	outline: none;
+}
+
+	select:hover {
+		background-color: #fff;
+	}
+
+/* UI */
+
+/* #viewport {
+	position: absolute;
+	top: 32px;
+	left: 0;
+	right: 300px;
+	bottom: 0;
+}
+
+	#viewport #info {
+		text-shadow: 1px 1px 0 rgba(0,0,0,0.25);
+		pointer-events: none;
+	}
+
+#script {
+	position: absolute;
+	top: 32px;
+	left: 0;
+	right: 300px;
+	bottom: 0;
+	opacity: 0.9;
+}
+
+#player {
+	position: absolute;
+	top: 32px;
+	left: 0;
+	right: 300px;
+	bottom: 0;
+} */
+
+#contextmenu {
+	position: absolute;
+	height: 32px;
+	background-color: #171f75;
+    border-radius: 6px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+	padding: 0;
+	margin: 0;
+}
+
+	#contextmenu .menu {
+		float: left;
+		cursor: pointer;
+	}
+
+	#contextmenu .menu.right {
+		float: right;
+		cursor: auto;
+		padding-right: 0;
+		text-align: right;
+	}
+
+		#contextmenu .menu .title {
+			display: inline-block;
+			color: #fff;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 2px #111;
+			margin: 0;
+			padding: 8px;
+			line-height: 16px;
+		}
+
+		#contextmenu .menu .options {
+			position: fixed;
+			padding: 2px 0;
+			border-radius: 6px;
+			width: 160px;
+			max-height: 50%;
+			box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+			text-shadow: 1px 1px 2px #111;
+			background-color: rgba(161, 209, 232, 0.5);
+			overflow: auto;
+		}
+
+		#contextmenu .menu:hover .options {
+			display: block;
+		}
+
+			#contextmenu .menu .options hr {
+				border-color: #ddd;
+			}
+
+			#contextmenu .menu .options .option .icon {
+				color: lightblue;
+				text-shadow: 2px 2px 4px #000000;
+				padding-right: 10px;
+			}
+
+			#contextmenu .menu .options .option {
+				color: #fff;
+				background-color: transparent;
+				padding: 5px 10px;
+				margin: 0 !important;
+			}
+
+				#contextmenu .menu .options .option:hover {
+					color: #fff;
+					background-color: #323ff0;
+				}
+
+				#contextmenu .menu .options .option:active {
+					color: #fff;
+					background-color: #323ff0;
+				}
+
+		#contextmenu .menu .options .inactive {
+			color: #bbb;
+			background-color: transparent;
+			padding: 5px 10px;
+			margin: 0 !important;
+		}
+
+#menubar {
+	position: absolute;
+	height: 32px;
+	background-color: #171f75;
+    border-radius: 6px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+	padding: 0;
+	margin: 0;
+	right: 0;
+	top: 0;
+}
+
+	#menubar .menu {
+		float: left;
+		cursor: pointer;
+	}
+
+	#menubar .menu.right {
+		float: right;
+		cursor: auto;
+		padding-right: 0;
+		text-align: right;
+	}
+
+		#menubar .menu .title {
+			display: inline-block;
+			color: #fff;
+			text-transform: uppercase;
+			text-shadow: 1px 1px 2px #111;
+			margin: 0;
+			padding: 8px;
+			line-height: 16px;
+		}
+
+		#menubar .menu .options {
+			position: fixed;
+			display: none;
+			padding: 2px 0;
+			border-radius: 6px;
+			width: 160px;
+			max-height: calc(100% - 80px);
+			box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+			text-shadow: 1px 1px 2px #111;
+			background-color: rgba(161, 209, 232, 0.5);
+			overflow: auto;
+		}
+
+		#menubar .menu:hover .options {
+			display: block;
+		}
+
+			#menubar .menu .options hr {
+				border-color: #ddd;
+			}
+
+			#menubar .menu .options .option .icon {
+				color: lightblue;
+				text-shadow: 2px 2px 4px #000000;
+				padding: 0 10px;
+			}
+
+			#menubar .menu .options .option {
+				color: #fff;
+				background-color: transparent;
+				padding: 5px 10px 5px 0px;
+				margin: 0 !important;
+			}
+
+				#menubar .menu .options .option:hover {
+					color: #fff;
+					background-color: #323ff0;
+				}
+
+				#menubar .menu .options .option:active {
+					color: #fff;
+					background-color: #323ff0;
+				}
+
+		#menubar .menu .options .inactive {
+			color: #bbb;
+			background-color: transparent;
+			padding: 5px 10px;
+			margin: 0 !important;
+		}
+
+#sidebar {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 300px;
+	border-radius: 6px;
+	background: #171f75;
+	overflow: auto;
+}
+
+	#sidebar * {
+		vertical-align: middle;
+	}
+
+	#sidebar .Panel {
+		color: #fff;
+		padding: 10px;
+		text-shadow: 1px 1px 2px #111;
+	}
+
+	#sidebar .Panel input.Number {
+		background-color: rgba(50, 63, 240, 0.2);
+	}
+
+	#sidebar .Panel.collapsed {
+		margin-bottom: 0;
+	}
+
+	#sidebar .Row {
+		min-height: 20px;
+		margin-bottom: 10px;
+	}
+
+#tabs {
+	background-color: rgba(161, 209, 232, 0.2);
+}
+
+	#tabs .icon {
+		color: lightblue;
+		margin: 0;
+		border: 0;
+		padding: 0 0 0 6px;
+		text-shadow: 2px 2px 4px #000000;
+	}
+
+	#tabs span {
+		color: #aaa;
+		border-radius: 6px 6px 0 0;
+		padding: 8px;
+		text-shadow: 1px 1px 2px #111;
+	}
+
+	#tabs span.selected {
+		color: #fff;
+		background-color: #171f75;
+	}
+
+#toolbar {
+	position: absolute;
+	left: calc(50% - 290px);
+	width: 280px;
+	bottom: 16px;
+	height: 32px;
+	background: #eee;
+	color: #333;
+}
+
+	#toolbar * {
+		vertical-align: middle;
+	}
+
+	#toolbar .Panel {
+		padding: 4px;
+		color: #888;
+	}
+
+	#toolbar button {
+		margin-right: 6px;
+		line-height: 14px;
+		height: 24px;
+	}
+
+/* draggable */
+
+#sunlight,
+#sky,
+#skydome,
+#clouds,
+#clouddome,
+#snows,
+#rain,
+#boids,
+#curlnoise,
+#curlparticles,
+#bubbles,
+#spritebubbles,
+#smoke,
+#volumefire,
+#fireparticles,
+#proctree,
+#tufts,
+#water,
+#ocean,
+#ground,
+#terrain,
+#gpuparticles,
+#raymarch
+{
+	position: absolute;
+	/* top: 50%; */
+	/* left: 50%; */
+	top: calc(50% - 138px);
+	left: calc(50% - 100px); /* 90 = width/2 */
+	z-index: 1;
+	width: 200px;
+	border-radius: 6px;
+	background-color: rgba(161, 209, 232, 0.5);
+	overflow: auto;
+}
+
+	#sunlight *,
+	#sky *,
+	#skydome *,
+	#clouds *,
+	#clouddome *,
+	#snows *,
+	#rain *,
+	#boids *,
+	#curlnoise *,
+	#curlparticles *,
+	#bubbles *,
+	#spritebubbles *,
+	#smoke *,
+	#volumefire *,
+	#fireparticles *,
+	#proctree *,
+	#tufts *,
+	#water *,
+	#ocean *,
+	#ground *,
+	#terrain *,
+	#gpuparticles *,
+	#raymarch *
+	{
+		vertical-align: middle;
+	}
+	
+	#sunlight-header,
+	#sky-header,
+	#skydome-header,
+	#clouds-header,
+	#clouddome-header,
+	#snows-header,
+	#rain-header,
+	#boids-header,
+	#curlnoise-header,
+	#curlparticles-header,
+	#bubbles-header,
+	#spritebubbles-header,
+	#smoke-header,
+	#volumefire-header,
+	#fireparticles-header,
+	#proctree-header,
+	#tufts-header,
+	#water-header,
+	#ocean-header,
+	#ground-header,
+	#terrain-header,
+	#gpuparticles-header,
+	#raymarch-header
+	{
+		cursor: move;
+		z-index: 1;
+		padding: 8px;
+		vertical-align: middle;
+		text-transform: uppercase;
+		text-shadow: 1px 1px 2px #111;
+		color: #fff;
+		background-color: #171f75;
+	}
+
+		#sunlight-header .icon,
+		#sky-header .icon,
+		#skydome-header .icon,
+		#clouds-header .icon,
+		#clouddome-header .icon,
+		#snows-header .icon,
+		#rain-header .icon,
+		#boids-header .icon,
+		#curlnoise-header .icon,
+		#curlparticles-header .icon,
+		#bubbles-header .icon,
+		#spritebubbles-header .icon,
+		#smoke-header .icon,
+		#volumefire-header .icon,
+		#fireparticles-header .icon,
+		#proctree-header .icon,
+		#tufts-header .icon,
+		#water-header .icon,
+		#ocean-header .icon,
+		#ground-header .icon,
+		#terrain-header .icon,
+		#gpuparticles-header .icon,
+		#raymarch-header .icon
+		{
+			color: lightblue;
+			margin: 0;
+			border: 0;
+			padding: 0 0 0 6px;
+			text-shadow: 2px 2px 4px #000000;
+		}
+
+			#sunlight-header .close .icon,
+			#sky-header .close .icon,
+			#skydome-header .close .icon,
+			#clouds-header .close .icon,
+			#clouddome-header .close .icon,
+			#snows-header .close .icon,
+			#rain-header .close .icon,
+			#boids-header .close .icon,
+			#curlnoise-header .close .icon,
+			#curlparticles-header .close .icon,
+			#bubbles-header .close .icon,
+			#spritebubbles-header .close .icon,
+			#smoke-header .close .icon,
+			#volumefire-header .close .icon,
+			#fireparticles-header .close .icon,
+			#proctree-header .close .icon,
+			#tufts-header .close .icon,
+			#water-header .close .icon,
+			#ocean-header .close .icon,
+			#ground-header .close .icon,
+			#terrain-header .close .icon,
+			#gpuparticles-header .close .icon,
+			#raymarch-header .close .icon
+			{
+				float: right;
+				font-weight: bold;
+				padding: 2px 0 0 0;
+			}
+
+			#sunlight-header .close:hover .icon,
+			#sky-header .close:hover .icon,
+			#skydome-header .close:hover .icon,
+			#clouds-header .close:hover .icon,
+			#clouddome-header .close:hover .icon,
+			#snows-header .close:hover .icon,
+			#rain-header .close:hover .icon,
+			#boids-header .close:hover .icon,
+			#curlnoise-header .close:hover .icon,
+			#curlparticles-header .close:hover .icon,
+			#bubbles-header .close:hover .icon,
+			#spritebubbles-header .close:hover .icon,
+			#smoke-header .close:hover .icon,
+			#volumefire-header .close:hover .icon,
+			#fireparticles-header .close:hover .icon,
+			#proctree-header .close:hover .icon,
+			#tufts-header .close:hover .icon,
+			#water-header .close:hover .icon,
+			#ocean-header .close:hover .icon,
+			#ground-header .close:hover .icon,
+			#terrain-header .close:hover .icon,
+			#gpuparticles-header .close:hover .icon,
+			#raymarch-header .close:hover .icon,
+			#sunlight-header .close:focus .icon,
+			#sky-header .close:focus .icon,
+			#skydome-header .close:focus .icon,
+			#clouds-header .close:focus .icon,
+			#clouddome-header .close:focus .icon,
+			#snows-header .close:focus .icon,
+			#rain-header .close:focus .icon,
+			#boids-header .close:focus .icon,
+			#curlnoise-header .close:focus .icon,
+			#curlparticles-header .close:focus .icon,
+			#bubbles-header .close:focus .icon,
+			#spritebubbles-header .close:focus .icon,
+			#smoke-header .close:focus .icon,
+			#volumefire-header .close:focus .icon,
+			#fireparticles-header .close:focus .icon,
+			#proctree-header .close:focus .icon,
+			#tufts-header .close:focus .icon,
+			#water-header .close:focus .icon,
+			#ocean-header .close:focus .icon,
+			#ground-header .close:focus .icon,
+			#terrain-header .close:focus .icon,
+			#gpuparticles-header .close:focus .icon,
+			#raymarch-header .close:focus .icon
+			{
+				color: #000;
+				cursor: pointer;
+			}
+
+	#sunlight .Panel,
+	#sky .Panel,
+	#skydome .Panel,
+	#clouds .Panel,
+	#clouddome .Panel,
+	#snows .Panel,
+	#rain .Panel,
+	#boids .Panel,
+	#curlnoise .Panel,
+	#curlparticles .Panel,
+	#bubbles .Panel,
+	#spritebubbles .Panel,
+	#smoke .Panel,
+	#volumefire .Panel,
+	#fireparticles .Panel,
+	#proctree .Panel,
+	#tufts .Panel,
+	#water .Panel,
+	#ocean .Panel,
+	#ground .Panel,
+	#terrain .Panel,
+	#gpuparticles .Panel,
+	#raymarch .Panel
+	{
+		color: #fff;
+		padding: 10px;
+		text-shadow: 1px 1px 2px #111;
+	}
+
+		#sunlight .Panel input.Number,
+		#sky .Panel input.Number,
+		#skydome .Panel input.Number,
+		#clouds .Panel input.Number,
+		#clouddome .Panel input.Number,
+		#snows .Panel input.Number,
+		#rain .Panel input.Number,
+		#boids .Panel input.Number,
+		#curlnoise .Panel input.Number,
+		#curlparticles .Panel input.Number,
+		#bubbles .Panel input.Number,
+		#spritebubbles .Panel input.Number,
+		#smoke .Panel input.Number,
+		#volumefire .Panel input.Number,
+		#fireparticles .Panel input.Number,
+		#proctree .Panel input.Number,
+		#tufts .Panel input.Number,
+		#water .Panel input.Number,
+		#ocean .Panel input.Number,
+		#ground .Panel input.Number,
+		#terrain .Panel input.Number,
+		#gpuparticles .Panel input.Number,
+		#raymarch .Panel input.Number
+		{
+			background-color: rgba(161, 209, 232, 0.2);
+		}
+
+		#sunlight .Panel.collapsed,
+		#sky .Panel.collapsed,
+		#skydome .Panel.collapsed,
+		#clouds .Panel.collapsed,
+		#clouddome .Panel.collapsed,
+		#snows .Panel.collapsed,
+		#rain .Panel.collapsed,
+		#boids .Panel.collapsed,
+		#curlnoise .Panel.collapsed,
+		#curlparticles .Panel.collapsed,
+		#bubbles .Panel.collapsed,
+		#spritebubbles .Panel.collapsed,
+		#smoke .Panel.collapsed,
+		#volumefire .Panel.collapsed,
+		#fireparticles .Panel.collapsed,
+		#proctree .Panel.collapsed,
+		#tufts .Panel.collapsed,
+		#water .Panel.collapsed,
+		#ocean .Panel.collapsed,
+		#ground .Panel.collapsed,
+		#terrain .Panel.collapsed,
+		#gpuparticles .Panel.collapsed,
+		#raymarch .Panel.collapsed
+		{
+			margin-bottom: 0;
+		}
+
+		#sunlight .Row,
+		#sky .Row,
+		#skydome .Row,
+		#clouds .Row,
+		#clouddome .Row,
+		#snows .Row,
+		#rain .Row,
+		#boids .Row,
+		#curlnoise .Row,
+		#curlparticles .Row,
+		#bubbles .Row,
+		#spritebubbles .Row,
+		#smoke .Row,
+		#volumefire .Row,
+		#fireparticles .Row,
+		#proctree .Row,
+		#tufts .Row,
+		#water .Row,
+		#ocean .Row,
+		#ground .Row,
+		#terrain .Row,
+		#gpuparticles .Row,
+		#raymarch .Row
+		{
+			min-height: 20px;
+			margin-bottom: 10px;
+		}
+
+/* for responsive web */
+
+@media all and ( max-width: 600px ) {
+
+	#menubar .menu .options {
+		max-height: calc(100% - 100px);
+	}
+
+	#menubar .menu.right {
+		display: none;
+	}
+
+	/* #viewport {
+		left: 0;
+		right: 0;
+		top: 32px;
+		height: calc(100% - 352px);
+	}
+
+	#script {
+		left: 0;
+		right: 0;
+		top: 32px;
+		height: calc(100% - 352px);
+	}
+
+	#player {
+		left: 0;
+		right: 0;
+		top: 32px;
+		height: calc(100% - 352px);
+	} */
+
+	#sidebar {
+		left: 0;
+		width: 100%;
+		top: calc(100% - 320px);
+		bottom: 0;
+	}
+
+	#toolbar {
+		left: calc(50% - 140px);
+		width: 280px;
+		top: 68px;
+	}
+
+	#scenegraph {
+		left: 0;
+		width: 100%;
+	}
+
+}
+
+/* for Shortcuts & About */
+
+@media all and ( max-width: 600px ) {
+
+	.Modal .content {
+		width: 100%;
+	}
+
+}
+
+@media all and ( max-height: 940px ) {
+
+	.Modal {
+		padding-top: 0px;
+	}
+
+}

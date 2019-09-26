@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>NatureWorks</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="shortcut icon" href="images/leaf.png"/>
+        <link id="theme" href="css/ui.teal.css" rel="stylesheet" />
+        <script src="dist/natureWorks.min.js"></script>
+    </head>
+    <body>
+        <div id="novaGraphix"></div>
+        <script>
+            var novaGraphix = document.getElementById( 'novaGraphix' );
+            var appWorks = JAMIE.createNatureWorks({
+                width: window.innerWidth,
+                height: window.innerHeight
+            });
+            novaGraphix.appendChild( appWorks.dom );
+            var appGUI = JAMIE.createNatureGUI( appWorks );
+            novaGraphix.appendChild( appGUI.dom );
+        </script>
+    </body>
+</html>
