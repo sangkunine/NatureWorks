@@ -1,12 +1,12 @@
-/* @import url('https://fonts.googleapis.com/css?family=Karla'); */
+@import url('https://fonts.googleapis.com/css?family=Karla');
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/solid.css");
 @import url("https://use.fontawesome.com/releases/v5.8.2/css/fontawesome.css");
 
 body {
-	/* font-family: 'Karla', sans-serif; */
+	font-family: 'Karla', sans-serif;
 	/* font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; */
 	/* font-family: "Times New Roman", Times, serif; */
-	font-family: Arial, Helvetica, sans-serif;
+	/* font-family: Arial, Helvetica, sans-serif; */
 	/* font-variant: small-caps; */
 	font-size: 14px;
 	margin: 0;
