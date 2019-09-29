@@ -4,7 +4,14 @@
         <title>NatureWorks</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <meta http-equiv="Content-Security-Policy" content="default-src *;">
+        <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self' data: gap: 'unsafe-eval' ws: ;
+        style-src 'self' 'unsafe-inline';
+        script-src 'none';
+        media-src *;
+        font-src *;
+        connect-src *;
+        img-src 'self' data: content:;">
         <link rel="shortcut icon" href="images/leaf.png"/>
         <link id="theme" href="css/ui.teal.css" rel="stylesheet" />
         <script src="dist/natureWorks.min.js"></script>
