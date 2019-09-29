@@ -1,4 +1,4 @@
-/******* start of ui.main.css ********/
+/******* start of common css that applies to all css ********/
 
 body {
 	font-family: 'Karla', sans-serif;
@@ -496,7 +496,7 @@ li.selected {
     z-index: 50;
 }
 
-/******* end of ui.main.css ********/
+/******* end of common css that applies to all css ********/
 
 button {
 	color: #eee;
