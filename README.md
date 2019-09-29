@@ -6,97 +6,94 @@
 ![](https://img.shields.io/badge/webpack-4.38.0-yellow)
 ![](https://img.shields.io/badge/three.js-r106-green)
 
-**NatureWorks** is a web-based 3D Nature graphics engine for realistic real-time rendering of Nature, including sky, clouds, fire, flower, grass, ground, ocean, tree, smoke, snow, bubbles, sunlight, terrain, fire, water, a flock of birds, a school of fish and their combinations, based on the popular javascript library, [three.js](https://threejs.org/). It will be upgraded for more realistic rendering, and more features of nature will continue to be inserted for further analysis. You can create any natural features or phenomena you imagine in a way you wish through NatureWorks.
+**NatureWorks** is a web-based 3D Nature graphics engine for a realistic real-time rendering of Nature, for example, sky, clouds, snows, rain, fish, bubbles, smoke, fire, tree, flowers, grass, water, ocean, ground, terrain, and their combinations, based on the popular javascript library, [three.js](https://threejs.org/). It will be upgraded for more realistic rendering, and more features of nature will continue to be inserted for more powerful modeling. You can create any natural features or phenomena you imagine in a way you wish through NatureWorks.
 
-## Abstract
-This application has a general purpose 3D rendering engine based on WebGL and JavaScript, which supports various functions such as undo/redo, auto saving, scene graph, multiple selections, three different controls (camera controls, transform controls, drag controls), two texture map libraries (matcap and normal map library), boolean operations (union, intersect, subtract), import/export files, and so on. In addition, it includes a general purpose CSS styling engine, which provides common user interface elements, such as drop-down menus, sidebar, context menu, tooltip, modal popups, drag & drop, and so on. It also has a structure for multiple languages and allows five themes (blue, dark, light, teal, transparent) using the selected language. Note that it was built on three.js and its associated js files.
+# Main functions
 
-# Highlighted Features
+This application provides various functions such as undo/redo, auto saving, scene graph, multiple selections, different controls (camera controls, transform controls, and drag controls), texture map libraries (matcap material library & normal map library), boolean operations (union, intersect, and subtract), and importing 3D model files (11 file formats supported). In addition, it includes user interface elements such as drop-down menus, sidebar, context menu, tooltip, modal popups, and drag & drop. It also has a structure for multiple languages and allows five themes (blue, dark, light, teal, transparent).
 
-- Underlying Technologies<br>
-WebGL (three.js), GLSL Shaders using ray-marching technique.
+# Highlighted features
 
-- Create from Template<br>
-More than 15 different features of nature are provided for non-experts in JSON file format. For example, they are “sky, clouds, fire, flower, grass, ground, ocean, tree, smoke, snow, bubbles, sunlight, terrain, fire, water, a flock of birds, and a school of fish”.
+- Supported natures<br>
+This application provides 23 different kinds of natures for non-experts. They are sunlight, sky (sky dome), clouds (cloud dome), snows, rain, boids(e.g., a school of fish), curl noise, curl particles, bubbles (sprite bubbles), smoke, volume fire, fire particles, tree, tufts(e.g., flower, grass), water, ocean, ground, terrain, gpu particles, and raymarch-based natures (e.g., terrain, tunnel, galaxy, mountains, canyon, caves, sea, river, forest, fish, etc)”. Note that the raymarch-based natures were inspired by [Shadertoy](https://www.shadertoy.com).
 
-- Drag & drop<br>
-These files (listed above) can be uploaded to a web browser just in a drag & drop manner.
+- Undo / redo<br>
+The undo function is used to erase the last change done to the document reverting it to an older state. And redo is used to rerun the recent actions you undid. Note that there is no limit to the number of undo operations.
 
-- Pop-up menu / context menu<br>
-The position, size, number or properties of each feature can be edited through a simple GUI according to user's need. The main components of the GUI are the pop-up menus at the top of your web browser and the context menus that appear when selecting objects by right-clicking.
+- Auto save<br>
+Like Google documents, all changed data is automatically saved. Note that if the data size exceeds the capacity of your web browser used, the storage may fail. In this case, you need to use the pop-up menu (File > Save As) to save the changed data.
 
-- Export or share<br>
-All modified data can be stored in the JSON file format on a personal computer or shared with others via the Internet. 
+- Scene graph<br>
+In a scene graph with a tree structure, a node marked with a check box is a parent node having a child node, and a node without a check box is a leaf node. Each node has a colored box preceded by its name, and if it is a mesh, there is a blue node pointing to the geometry and a green node pointing to the material next to it. The selected node is displayed in red, and you can edit the details of that node through the right-click context menu.
 
-- PBR & Shaders<br>
-NatureWorks provides game developers with a framework for physically based rendering (PBR) and shader programming environment for procedural approach to render the huge amount of features in detail and in a realistic way.
+- MatCap material library<br>
+You can apply Matcap material to an object using the Matcap material library of 50 textures. Note that a custom material map can be also applied by dropping it to the last element of material drop zone.
 
-- Shader Programming<br>
-With developed shader programs, application developers are able to create a new scene just by calling the functions existing inside the shaders.
+- Normal map library<br>
+You can adjust the normal map of material through the 26 normal textures and normal scale adjustments.
 
+- Boolean operations
+    - union: it obtains the union of two meshes.
+    - intersect: it gets the intersection of two meshes.
+    - subtract: tt obtains the difference set between two meshes.
+
+- Context menu<br>
+The context menus appears when selecting objects by mouse right-clicking. You can edit various properties of the 3D model using this context menu.
+
+- Importing files<br>
+You can load 3D model files using the pop-up menu (FILE > Open Files...) or drag & drop them to your web browser. Supported file formats are json, obj(+mtl), stl, ply, dae(collada), gltf, glb, amf, 3mf, wrl(vrml), and fbx.
 
 ## User interface
 
-- Undo / Redo
-    - Ctrl + Z : Undo
-    - Ctrl + Y : Redo
-- Selections
-    - Left Click : Single selection
-    - Ctrl + Left Click : Multiple selection
-    - Alt + Left Click : Ancestor selection of the clicked
-    - Click Again : Cancel the selection
-- Camera Controls
-    - Left Click + Drag : Rotate
-    - Scroll Wheel : Zoom
-    - Right Click + Drag : Pan
-- Transformation Controls
-    - W key : Translate mode
-    - E key : Rotate mode
-    - R key : Scale mode
-    - Q key : Toggle world / local space
-    - X key : Toggle X-space
-    - Y key : Toggle Y-space
-    - Z key : Toggle Z-space
-    - Space key: Toggle visible
-    - '+' key : Increase axes
-    - '-' key : Decrease axes
-    - Hold Ctrl down : Translate or rotate snap
-- Function Keys
-    - F1 key : Toggle scene graph
-    - F2 key : Toggle all GUIs
-    - F3 key : Toggle drag controls
-    - F4 key : Toggle transform controls
+- Undo / redo
+    - ctrl + z : undo
+    - ctrl + y : redo
+- Selection
+    - mouse left click : single selection
+    - mouse left click again : deselection of the clicked object
+    - ctrl + mouse left click : multiple selection
+    - alt + mouse left click : ancestor selection of the clicked object
+- Camera controls
+    - mouse left click + drag : rotate
+    - mouse scroll wheel : zoom (in/out)
+    - mouse right click + drag : pan
+- Transformation controls
+    - w key : translate mode
+    - e key : rotate mode
+    - r key : scale mode
+    - q key : toggle world / local space
+    - x key : toggle x-space
+    - y key : toggle y-space
+    - z key : toggle z-space
+    - space key: toggle visible
+    - '+' key : increase axes
+    - '-' key : decrease axes
+    - hold ctrl down : translate or rotate snap
+- Function keys
+    - F1 key : toggle scene graph
+    - F2 key : toggle all GUIs
+    - F3 key : toggle drag controls
+    - F4 key : toggle transform controls
     - F5 key : Toggle all editors
-    - F6 key : Screen capture
-    - F8 key : Place the selected in screen center
-    - F9 key : Clear the current setting
-    - F10 key : Clear all data in current screen
-- Keyboard Keys
-    - Delete key : Delete the selected object
-    - Escape key : Enable camera controls
-    - C key : Toggle FPS / orbit camera
-    - L key : Toggle all light helpers
-    - M key : Toggle sounds if available
-    - O key : Stop animation if available
-    - P key : Play next animation if available
+    - F6 key : screen capture
+    - F8 key : place the selected in screen center
+    - F9 key : clear the current setting
+    - F10 key : clear all data in current screen
+- Keyboard keys
+    - delete key : delete the selected object
+    - escape key : enable camera controls
+    - c key : toggle FPS / orbit camera
+    - l key : toggle all light helpers
+    - m key : toggle sounds if available
+    - o key : stop animation if available
+    - p key : play next animation if available
 
-## Application Areas
+## Application areas
 
-NatureWorks can be used in various fields: scientific visualization, video games, movie making, GIS simulation, digital art, web design, virtual reality (VR), computer education, and other commercial works. For example, this engine will be used widely in making background for games played in natural sceneries. Additionally, it will provide the background scenes necessary for film that deal with disasters.
+NatureWorks can be used in such applications as video games, movie making, GIS simulation, digital art, web design, virtual reality, and other commercial works. For example, this app is able to make background scenes for video games played in natural sceneries. Also it can produce complex backgrounds that are often required to make a film about disasters.
 
-- Movie Making<br>
-You can easily build background scenes that are expensive to produce.
+## Question or suggestion
 
-- Digital Art<br>
-You can easily design an amazing digital world that you imagine.
+Please contact us at <info@nova-graphix.com> for any question or suggestion.
 
-- Video Games<br>
-You can create a variety of natural phenomena and render realistic images in a simple way.
-
-- Virtual Reality (VR)<br>
-You can design realistic natural phenomena in 3D space for various VR applications.
-
-
-## Copyright Notice
-This presentation is protected by U.S. and International copyright laws. Reproduction and distribution of the presentation without written permission of the sponsor is prohibited.<br>
-Copyright (c) 2019 NovaGraphix, Co. All rights reserved.
+Thank you for reading the above description on **NatureWorks**, developed by [NovaGraphix, Co.](https://www.nova-graphix.com/) Note that we will continue to add new features and new technologies.
