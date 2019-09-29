@@ -96,4 +96,4 @@ NatureWorks can be used in such applications as video games, movie making, GIS s
 
 Please contact us at <info@nova-graphix.com> for any question or suggestion.
 
-Thank you for reading the above description on **NatureWorks**, developed by [NovaGraphix, Co.](https://www.nova-graphix.com/) Note that we will continue to add new features and new technologies.
+Thank you for reading the above description on **NatureWorks**, developed by [NovaGraphix, Co.](https://www.nova-graphix.com/) Note that we will continue to add new features and technologies.
