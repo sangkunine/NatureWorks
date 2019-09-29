@@ -1,4 +1,502 @@
-@import url('/css/ui.main.css');
+/******* start of ui.main.css ********/
+
+body {
+	font-family: 'Karla', sans-serif;
+	font-size: 14px;
+	margin: 0;
+	overflow: hidden;
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+}
+
+button {
+	position: relative;
+}
+
+textarea {
+	tab-size: 4;
+	white-space: pre;
+	word-wrap: normal;
+}
+
+	textarea.success {
+		border-color: #8b8 !important;
+	}
+
+	textarea.fail {
+		border-color: #f00 !important;
+		background-color: rgba(255,0,0,0.05);
+	}
+
+textarea, input { outline: none; } /* osx */
+
+.Panel {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+
+	/* No support for these yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
+/* CodeMirror */
+
+.CodeMirror {
+	position: absolute !important;
+	top: 37px;
+	width: 100% !important;
+	height: calc(100% - 37px) !important;
+}
+
+	.CodeMirror .errorLine {
+		background: rgba(255,0,0,0.25);
+	}
+
+	.CodeMirror .esprima-error {
+		color: #f00;
+		text-align: right;
+		padding: 0 20px;
+	}
+
+#info {
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+	pointer-events: none;
+}
+
+/* scene graph */
+
+#scenegraph {
+	/* max-height: set dynamically in jamieGUI.js */
+	overflow: auto;
+
+	/* below: for scrollbar */
+	-ms-overflow-style: none; /* IE 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+#scenegraph::-webkit-scrollbar {
+	display: none; /* Safari and Chrome */
+}
+
+/* tree */
+
+#tree .type {
+	position: relative;
+	padding: 0 2px;
+	color: #ddd;
+}
+
+#tree .type:after {
+	content: '■';
+}
+
+#tree .ArrayCamera			{ color: #B18F6A; }
+#tree .Camera				{ color: #B18F6A; }
+#tree .CubeCamera			{ color: #B18F6A; }
+#tree .OrthographicCamera	{ color: #B18F6A; }
+#tree .PerspectiveCamera	{ color: #B18F6A; }
+#tree .StereoCamera			{ color: #B18F6A; }
+
+#tree .Scene				{ color: #98DDDE; }
+#tree .Object3D				{ color: #B4B7BA; }
+#tree .Group				{ color: #F7786B; }
+#tree .Bone					{ color: #898E8C; }
+
+#tree .Mesh					{ color: #D69C2F; }
+#tree .SkinnedMesh			{ color: #EDCDC2; }
+
+#tree .Line					{ color: #92B558; }
+#tree .LineLoop				{ color: #92B558; }
+#tree .LineSegments			{ color: #92B558; }
+
+#tree .Points				{ color: #DC4C46; }
+
+#tree .AmbientLight			{ color: #F0EDE5; }
+#tree .PointLight			{ color: #F0EDE5; }
+#tree .SpotLight			{ color: #F0EDE5; }
+#tree .DirectionalLight		{ color: #F0EDE5; }
+#tree .HemisphereLight		{ color: #F0EDE5; }
+
+#tree .BufferGeometry		{ color: #4488ff; }
+#tree .DirectGeometry		{ color: #4488ff; }
+#tree .Geometry				{ color: #4488ff; }
+#tree .InstancedBufferGeometry	{ color: #4488ff; }
+
+#tree .BoxBufferGeometry		{ color: #4488ff; }
+#tree .BoxGeometry				{ color: #4488ff; }
+#tree .CircleBufferGeometry		{ color: #4488ff; }
+#tree .CircleGeometry			{ color: #4488ff; }
+#tree .ConeBufferGeometry		{ color: #4488ff; }
+#tree .ConeGeometry				{ color: #4488ff; }
+#tree .CylinderBufferGeometry	{ color: #4488ff; }
+#tree .CylinderGeometry			{ color: #4488ff; }
+#tree .DodecahedronBufferGeometry{ color: #4488ff; }
+#tree .DodecahedronGeometry		{ color: #4488ff; }
+#tree .EdgesGeometry			{ color: #4488ff; }
+#tree .ExtrudeBufferGeometry	{ color: #4488ff; }
+#tree .ExtrudeGeometry			{ color: #4488ff; }
+#tree .IcosahedronBufferGeometry{ color: #4488ff; }
+#tree .IcosahedronGeometry		{ color: #4488ff; }
+#tree .LatheBufferGeometry		{ color: #4488ff; }
+#tree .LatheGeometry			{ color: #4488ff; }
+#tree .OctahedronBufferGeometry	{ color: #4488ff; }
+#tree .OctahedronGeometry		{ color: #4488ff; }
+#tree .ParametricBufferGeometry	{ color: #4488ff; }
+#tree .ParametricGeometry		{ color: #4488ff; }
+#tree .PlaneBufferGeometry		{ color: #4488ff; }
+#tree .PlaneGeometry			{ color: #4488ff; }
+#tree .PolyhedronBufferGeometry	{ color: #4488ff; }
+#tree .PolyhedronGeometry		{ color: #4488ff; }
+#tree .RingBufferGeometry		{ color: #4488ff; }
+#tree .RingGeometry				{ color: #4488ff; }
+#tree .ShapeBufferGeometry		{ color: #4488ff; }
+#tree .ShapeGeometry			{ color: #4488ff; }
+#tree .SphereBufferGeometry		{ color: #4488ff; }
+#tree .SphereGeometry			{ color: #4488ff; }
+#tree .TetrahedronBufferGeometry{ color: #4488ff; }
+#tree .TetrahedronGeometry		{ color: #4488ff; }
+#tree .TextBufferGeometry		{ color: #4488ff; }
+#tree .TextGeometry				{ color: #4488ff; }
+#tree .TorusBufferGeometry		{ color: #4488ff; }
+#tree .TorusGeometry			{ color: #4488ff; }
+#tree .TorusKnotBufferGeometry	{ color: #4488ff; }
+#tree .TorusKnotGeometry		{ color: #4488ff; }
+#tree .TubeBufferGeometry		{ color: #4488ff; }
+#tree .TubeGeometry				{ color: #4488ff; }
+#tree .WireframeGeometry		{ color: #4488ff; }
+
+#tree .LineBasicMaterial	{ color: #44aa44; }
+#tree .LineDashedMaterial	{ color: #44aa44; }
+#tree .Material				{ color: #44aa44; }
+#tree .MeshBasicMaterial	{ color: #44aa44; }
+#tree .MeshDepthMaterial	{ color: #44aa44; }
+#tree .MeshDistanceMaterial	{ color: #44aa44; }
+#tree .MeshLambertMaterial	{ color: #44aa44; }
+#tree .MeshMatcapMaterial	{ color: #44aa44; }
+#tree .MeshNormalMaterial	{ color: #44aa44; }
+#tree .MeshPhongMaterial	{ color: #44aa44; }
+#tree .MeshPhysicalMaterial	{ color: #44aa44; }
+#tree .MeshStandardMaterial	{ color: #44aa44; }
+#tree .MeshToonMaterial		{ color: #44aa44; }
+#tree .PointsMaterial		{ color: #44aa44; }
+#tree .RawShaderMaterial	{ color: #44aa44; }
+#tree .ShaderMaterial		{ color: #44aa44; }
+#tree .ShadowMaterial		{ color: #44aa44; }
+#tree .SpriteMaterial		{ color: #44aa44; }
+
+.Tree {
+	border: 1px solid transparent;
+}
+
+	.Tree .drag {
+		/* border: 1px dashed #999; */
+		border: 1px dashed green;
+	}
+
+	.Tree .dragTop {
+		/* border-top: 1px dashed #999; */
+		border-top: 1px dashed red;
+	}
+
+	.Tree .dragBottom {
+		/* border-bottom: 1px dashed #999; */
+		border-bottom: 1px dashed blue;
+	}
+
+ul, #treeUL {
+	list-style-type: none;
+}
+
+#treeUL {
+	margin: 0;
+	padding: 0;
+}
+
+p.Tree, ul.Tree, ul.Tree ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+p.Tree {
+	color: #fff;
+	text-shadow: 1px 1px 2px #111;
+}
+
+.Tree:focus {
+	outline: none;
+}
+
+ul.Tree {
+	color: #fff;
+	text-shadow: 1px 1px 2px #111;
+}
+
+	ul.Tree ul {
+		margin-left: 1.0em;
+		color: inherit;
+	}
+
+	ul.Tree li {
+		margin-left: 0.35em;
+		border-left: thin solid #888;
+		color: inherit;
+	}
+
+		ul.Tree li:last-child {
+			border-left: none;
+		}
+
+		ul.Tree li:before {
+			width: 0.9em;
+			height: 0.6em;
+			margin-right: 0.1em;
+			vertical-align: top;
+			border-bottom: thin solid #888;
+			content: "";
+			display: inline-block;
+		}
+
+		ul.Tree li:last-child:before {
+			border-left: thin solid #888;
+		}
+
+.box {
+	cursor: pointer;
+	-webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none;
+}
+
+	.box::before {
+		content: "\2610";
+		color: #888;
+		display: inline-block;
+		margin-right: 6px;
+		text-shadow: none;
+	}
+
+	.check-box::before {
+		content: "\2611"; 
+		color: dodgerblue;
+		text-shadow: none;
+	}
+
+.nested {
+	display: none;
+}
+
+.active {
+	display: block;
+}
+
+.translucent {
+	opacity: 0.5;
+}
+
+li.selected {
+	color: #9B2335 !important;
+	text-shadow: none;
+	font-weight: bold;
+}
+
+/* create 'three' equal columns that floats next to each other */
+
+.Column {
+	float: left;
+	width: 33.33%;
+	padding: 6px 0;
+}
+  
+/* clear floats after the columns */
+
+.Row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/* for Shortcuts & About */
+
+.Modal {
+	position: fixed;
+	z-index: 1;
+	padding-top: 32px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0,0,0);
+	background-color: rgba(0,0,0,0.4);
+}
+	.Modal * {
+		vertical-align: middle;
+	}
+
+	.Modal .content {
+		position: relative;
+		background-color: rgba(0,0,0,0.4);
+		color: white;
+		text-shadow: 1px 1px 2px #111;
+		margin: auto;
+		padding: 0;
+		border: 1px solid #888;
+		width: 60%;
+		box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+		-webkit-animation-name: animatetop;
+		-webkit-animation-duration: 0.4s;
+		animation-name: animatetop;
+		animation-duration: 0.4s
+	}
+
+	/* help animation */
+	@-webkit-keyframes animatetop {
+		from { top:-300px; opacity:0 }
+		to { top:0; opacity:1 }
+	}
+
+	@keyframes animatetop {
+		from { top:-300px; opacity:0 }
+		to { top:0; opacity:1 }
+	}
+
+	.Modal .header {
+		padding: 8px 16px;
+		background-color: #5cb85c;
+	}
+
+		.Modal .close .icon {
+			float: right;
+			font-weight: bold;
+			padding: 2px 0 0 0;
+		}
+
+		.Modal .close:hover .icon,
+		.Modal .close:focus .icon {
+			color: #000;
+			cursor: pointer;
+		}
+
+	.Modal .body {
+		padding: 8px 16px;
+	}
+
+	.Modal .footer {
+		padding: 8px 16px;
+		background-color: #5cb85c;
+	}
+
+/* tooltip */
+
+[data-tooltip] {
+    display: inline-block;
+    position: relative;
+    cursor: help;
+}
+
+/* tooltip box */
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    display: none;
+    position: absolute;
+    background: #000;
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 12px;
+	min-width: 20px;
+	text-align: center;
+    border-radius: 4px;
+}
+[data-tooltip-position="top"]:before,
+[data-tooltip-position="bottom"]:before {
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+[data-tooltip-position="right"]:before,
+[data-tooltip-position="left"]:before {
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+[data-tooltip-position="top"]:before {
+    bottom: 100%;
+    margin-bottom: 6px;
+}
+[data-tooltip-position="right"]:before {
+    left: 100%;
+    margin-left: 6px;
+}
+[data-tooltip-position="bottom"]:before {
+    top: 100%;
+    margin-top: 6px;
+}
+[data-tooltip-position="left"]:before {
+    right: 100%;
+    margin-right: 6px;
+}
+
+/* tooltip arrow */
+
+[data-tooltip]:after {
+    content: '';
+    display: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+}
+[data-tooltip-position="top"]:after,
+[data-tooltip-position="bottom"]:after {
+    left: 50%;
+    margin-left: -6px;
+}
+[data-tooltip-position="right"]:after,
+[data-tooltip-position="left"]:after {
+    top: 50%;
+    margin-top: -6px;
+}
+[data-tooltip-position="top"]:after {
+    bottom: 100%;
+    border-width: 6px 6px 0;
+    border-top-color: #000;
+}
+[data-tooltip-position="right"]:after {
+    left: 100%;
+    border-width: 6px 6px 6px 0;
+    border-right-color: #000;
+}
+[data-tooltip-position="bottom"]:after {
+    top: 100%;
+    border-width: 0 6px 6px;
+    border-bottom-color: #000;
+}
+[data-tooltip-position="left"]:after {
+    right: 100%;
+    border-width: 6px 0 6px 6px;
+    border-left-color: #000;
+}
+
+/* tooltip hovering */
+
+[data-tooltip]:hover:before,
+[data-tooltip]:hover:after {
+    display: block;
+    z-index: 50;
+}
+
+/******* end of ui.main.css ********/
 
 button {
 	color: #eee;
