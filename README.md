@@ -8,14 +8,14 @@
 
 **NatureWorks** is a web-based 3D Nature graphics engine for a realistic real-time rendering of Nature, for example, sky, clouds, snows, rain, fish, bubbles, smoke, fire, tree, flowers, grass, water, ocean, ground, terrain, and their combinations, based on the popular javascript library, [three.js](https://threejs.org/). It will be upgraded for more realistic rendering, and more features of nature will continue to be inserted for more powerful modeling. You can create any natural features or phenomena you imagine in a way you wish through NatureWorks.
 
-# Main functions
+## Main functions
 
 This application provides various functions such as undo/redo, auto saving, scene graph, multiple selections, different controls (camera controls, transform controls, and drag controls), texture map libraries (matcap material library & normal map library), boolean operations (union, intersect, and subtract), and importing 3D model files (11 file formats supported). In addition, it includes user interface elements such as drop-down menus, sidebar, context menu, tooltip, modal popups, and drag & drop. It also has a structure for multiple languages and allows five themes (blue, dark, light, teal, transparent).
 
 ## Website
 You can run this application at the website: https://sangkunine.github.io/natureWorks/.
 
-# Highlighted features
+## Highlighted features
 
 - Supported natures<br>
 This application provides 23 different kinds of natures for non-experts. They are sunlight, sky (sky dome), clouds (cloud dome), snows, rain, boids(e.g., a school of fish), curl noise, curl particles, bubbles (sprite bubbles), smoke, volume fire, fire particles, tree, tufts(e.g., flower, grass), water, ocean, ground, terrain, gpu particles, and raymarch-based natures (e.g., terrain, tunnel, galaxy, mountains, canyon, caves, sea, river, forest, fish, etc)”. Note that the raymarch-based natures were inspired by [Shadertoy](https://www.shadertoy.com).
