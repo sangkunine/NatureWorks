@@ -17,8 +17,8 @@ You can run this application at the website: https://sangkunine.github.io/nature
 
 ## Highlighted features
 
-- Supported natures<br>
-This application provides 23 different kinds of natures for non-experts. They are sunlight, sky (sky dome), clouds (cloud dome), snows, rain, boids(e.g., a school of fish), curl noise, curl particles, bubbles (sprite bubbles), smoke, volume fire, fire particles, tree, tufts(e.g., flower, grass), water, ocean, ground, terrain, gpu particles, and raymarch-based natures (e.g., terrain, tunnel, galaxy, mountains, canyon, caves, sea, river, forest, fish, etc)”. Note that the raymarch-based natures were inspired by [Shadertoy](https://www.shadertoy.com).
+- Nature assets<br>
+This application provides 23 different kinds of realistic natures for non-experts. They are sunlight, sky (sky dome), clouds (cloud dome), snows, rain, boids(e.g., a school of fish), curl noise, curl particles, bubbles (sprite bubbles), smoke, volume fire, fire particles, tree, tufts(e.g., flower, grass), water, ocean, ground, terrain, gpu particles, and raymarch-based natures (e.g., terrain, tunnel, galaxy, mountains, canyon, caves, sea, river, forest, fish, etc)”. Note that the raymarch-based natures were inspired by [Shadertoy](https://www.shadertoy.com).
 
 - Undo / redo<br>
 The undo function is used to erase the last change done to the document reverting it to an older state. And redo is used to rerun the recent actions you undid. Note that there is no limit to the number of undo operations.
