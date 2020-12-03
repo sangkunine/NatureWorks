@@ -15,11 +15,10 @@
         <div id="app-container"></div>
         <script>
             var appContainer = document.getElementById( 'app-container' );
-            var appWorks = JAMIE.createNatureWorks({
-                width: window.innerWidth,
-                height: window.innerHeight
-            });
+
+            var appWorks = JAMIE.createNatureWorks();
             appContainer.appendChild( appWorks.dom );
+
             var appGUI = JAMIE.createNatureGUI( appWorks );
             appContainer.appendChild( appGUI.dom );
         </script>
