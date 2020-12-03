@@ -70,14 +70,13 @@ textarea, input { outline: none; } /* osx */
 /* scene graph */
 
 #scenegraph {
-	/* max-height: set dynamically in jamieGUI.js */
-	overflow: auto;
-
-	/* below: for scrollbar */
+	/* hide scrollbar (still able to scroll) */
+	overflow: auto; /* max-height: calc(99%); */
 	-ms-overflow-style: none; /* IE 10+ */
 	scrollbar-width: none; /* Firefox */
 }
 #scenegraph::-webkit-scrollbar {
+	/* hide scrollbar (still able to scroll) */
 	display: none; /* Safari and Chrome */
 }
 
@@ -748,7 +747,15 @@ select {
 	width: 300px;
 	border-radius: 6px;
 	background: #171f75;
-	overflow: auto;
+
+	/* hide scrollbar (still able to scroll) */
+	overflow: auto; /* max-height: calc(75%); */
+	-ms-overflow-style: none; /* IE 10+ */
+	scrollbar-width: none; /* Firefox */
+}
+#sidebar::-webkit-scrollbar {
+	/* hide scrollbar (still able to scroll) */
+	display: none; /* Safari and Chrome */
 }
 
 	#sidebar * {
@@ -825,30 +832,7 @@ select {
 
 /* draggable */
 
-#sunlight,
-#sky,
-#skydome,
-#clouds,
-#clouddome,
-#snows,
-#rain,
-#boids,
-#curlnoise,
-#curlparticles,
-#bubbles,
-#spritebubbles,
-#smoke,
-#volumefire,
-#fireparticles,
-#proctree,
-#tufts,
-#water,
-#ocean,
-#ground,
-#terrain,
-#gpuparticles,
-#raymarch
-{
+.Modal-draggble {
 	position: absolute;
 	/* top: 50%; */
 	/* left: 50%; */
@@ -861,57 +845,11 @@ select {
 	overflow: auto;
 }
 
-	#sunlight *,
-	#sky *,
-	#skydome *,
-	#clouds *,
-	#clouddome *,
-	#snows *,
-	#rain *,
-	#boids *,
-	#curlnoise *,
-	#curlparticles *,
-	#bubbles *,
-	#spritebubbles *,
-	#smoke *,
-	#volumefire *,
-	#fireparticles *,
-	#proctree *,
-	#tufts *,
-	#water *,
-	#ocean *,
-	#ground *,
-	#terrain *,
-	#gpuparticles *,
-	#raymarch *
-	{
+	.Modal-draggble * {
 		vertical-align: middle;
 	}
 	
-	#sunlight-header,
-	#sky-header,
-	#skydome-header,
-	#clouds-header,
-	#clouddome-header,
-	#snows-header,
-	#rain-header,
-	#boids-header,
-	#curlnoise-header,
-	#curlparticles-header,
-	#bubbles-header,
-	#spritebubbles-header,
-	#smoke-header,
-	#volumefire-header,
-	#fireparticles-header,
-	#proctree-header,
-	#tufts-header,
-	#water-header,
-	#ocean-header,
-	#ground-header,
-	#terrain-header,
-	#gpuparticles-header,
-	#raymarch-header
-	{
+	.Modal-draggble .header {
 		cursor: move;
 		z-index: 1;
 		padding: 8px;
@@ -922,30 +860,7 @@ select {
 		background-color: #171f75;
 	}
 
-		#sunlight-header .icon,
-		#sky-header .icon,
-		#skydome-header .icon,
-		#clouds-header .icon,
-		#clouddome-header .icon,
-		#snows-header .icon,
-		#rain-header .icon,
-		#boids-header .icon,
-		#curlnoise-header .icon,
-		#curlparticles-header .icon,
-		#bubbles-header .icon,
-		#spritebubbles-header .icon,
-		#smoke-header .icon,
-		#volumefire-header .icon,
-		#fireparticles-header .icon,
-		#proctree-header .icon,
-		#tufts-header .icon,
-		#water-header .icon,
-		#ocean-header .icon,
-		#ground-header .icon,
-		#terrain-header .icon,
-		#gpuparticles-header .icon,
-		#raymarch-header .icon
-		{
+		.Modal-draggble .header .icon {
 			color: lightblue;
 			margin: 0;
 			border: 0;
@@ -953,193 +868,32 @@ select {
 			text-shadow: 2px 2px 4px #000000;
 		}
 
-			#sunlight-header .close .icon,
-			#sky-header .close .icon,
-			#skydome-header .close .icon,
-			#clouds-header .close .icon,
-			#clouddome-header .close .icon,
-			#snows-header .close .icon,
-			#rain-header .close .icon,
-			#boids-header .close .icon,
-			#curlnoise-header .close .icon,
-			#curlparticles-header .close .icon,
-			#bubbles-header .close .icon,
-			#spritebubbles-header .close .icon,
-			#smoke-header .close .icon,
-			#volumefire-header .close .icon,
-			#fireparticles-header .close .icon,
-			#proctree-header .close .icon,
-			#tufts-header .close .icon,
-			#water-header .close .icon,
-			#ocean-header .close .icon,
-			#ground-header .close .icon,
-			#terrain-header .close .icon,
-			#gpuparticles-header .close .icon,
-			#raymarch-header .close .icon
-			{
+			.Modal-draggble .header .close .icon {
 				float: right;
 				font-weight: bold;
 				padding: 2px 0 0 0;
 			}
 
-			#sunlight-header .close:hover .icon,
-			#sky-header .close:hover .icon,
-			#skydome-header .close:hover .icon,
-			#clouds-header .close:hover .icon,
-			#clouddome-header .close:hover .icon,
-			#snows-header .close:hover .icon,
-			#rain-header .close:hover .icon,
-			#boids-header .close:hover .icon,
-			#curlnoise-header .close:hover .icon,
-			#curlparticles-header .close:hover .icon,
-			#bubbles-header .close:hover .icon,
-			#spritebubbles-header .close:hover .icon,
-			#smoke-header .close:hover .icon,
-			#volumefire-header .close:hover .icon,
-			#fireparticles-header .close:hover .icon,
-			#proctree-header .close:hover .icon,
-			#tufts-header .close:hover .icon,
-			#water-header .close:hover .icon,
-			#ocean-header .close:hover .icon,
-			#ground-header .close:hover .icon,
-			#terrain-header .close:hover .icon,
-			#gpuparticles-header .close:hover .icon,
-			#raymarch-header .close:hover .icon,
-			#sunlight-header .close:focus .icon,
-			#sky-header .close:focus .icon,
-			#skydome-header .close:focus .icon,
-			#clouds-header .close:focus .icon,
-			#clouddome-header .close:focus .icon,
-			#snows-header .close:focus .icon,
-			#rain-header .close:focus .icon,
-			#boids-header .close:focus .icon,
-			#curlnoise-header .close:focus .icon,
-			#curlparticles-header .close:focus .icon,
-			#bubbles-header .close:focus .icon,
-			#spritebubbles-header .close:focus .icon,
-			#smoke-header .close:focus .icon,
-			#volumefire-header .close:focus .icon,
-			#fireparticles-header .close:focus .icon,
-			#proctree-header .close:focus .icon,
-			#tufts-header .close:focus .icon,
-			#water-header .close:focus .icon,
-			#ocean-header .close:focus .icon,
-			#ground-header .close:focus .icon,
-			#terrain-header .close:focus .icon,
-			#gpuparticles-header .close:focus .icon,
-			#raymarch-header .close:focus .icon
-			{
+			.Modal-draggble .header .close:hover .icon {
 				color: #000;
 				cursor: pointer;
 			}
 
-	#sunlight .Panel,
-	#sky .Panel,
-	#skydome .Panel,
-	#clouds .Panel,
-	#clouddome .Panel,
-	#snows .Panel,
-	#rain .Panel,
-	#boids .Panel,
-	#curlnoise .Panel,
-	#curlparticles .Panel,
-	#bubbles .Panel,
-	#spritebubbles .Panel,
-	#smoke .Panel,
-	#volumefire .Panel,
-	#fireparticles .Panel,
-	#proctree .Panel,
-	#tufts .Panel,
-	#water .Panel,
-	#ocean .Panel,
-	#ground .Panel,
-	#terrain .Panel,
-	#gpuparticles .Panel,
-	#raymarch .Panel
-	{
+	.Modal-draggble .Panel {
 		color: #fff;
 		padding: 10px;
 		text-shadow: 1px 1px 2px #111;
 	}
 
-		#sunlight .Panel input.Number,
-		#sky .Panel input.Number,
-		#skydome .Panel input.Number,
-		#clouds .Panel input.Number,
-		#clouddome .Panel input.Number,
-		#snows .Panel input.Number,
-		#rain .Panel input.Number,
-		#boids .Panel input.Number,
-		#curlnoise .Panel input.Number,
-		#curlparticles .Panel input.Number,
-		#bubbles .Panel input.Number,
-		#spritebubbles .Panel input.Number,
-		#smoke .Panel input.Number,
-		#volumefire .Panel input.Number,
-		#fireparticles .Panel input.Number,
-		#proctree .Panel input.Number,
-		#tufts .Panel input.Number,
-		#water .Panel input.Number,
-		#ocean .Panel input.Number,
-		#ground .Panel input.Number,
-		#terrain .Panel input.Number,
-		#gpuparticles .Panel input.Number,
-		#raymarch .Panel input.Number
-		{
+		.Modal-draggble .Panel input.Number {
 			background-color: rgba(161, 209, 232, 0.2);
 		}
 
-		#sunlight .Panel.collapsed,
-		#sky .Panel.collapsed,
-		#skydome .Panel.collapsed,
-		#clouds .Panel.collapsed,
-		#clouddome .Panel.collapsed,
-		#snows .Panel.collapsed,
-		#rain .Panel.collapsed,
-		#boids .Panel.collapsed,
-		#curlnoise .Panel.collapsed,
-		#curlparticles .Panel.collapsed,
-		#bubbles .Panel.collapsed,
-		#spritebubbles .Panel.collapsed,
-		#smoke .Panel.collapsed,
-		#volumefire .Panel.collapsed,
-		#fireparticles .Panel.collapsed,
-		#proctree .Panel.collapsed,
-		#tufts .Panel.collapsed,
-		#water .Panel.collapsed,
-		#ocean .Panel.collapsed,
-		#ground .Panel.collapsed,
-		#terrain .Panel.collapsed,
-		#gpuparticles .Panel.collapsed,
-		#raymarch .Panel.collapsed
-		{
+		.Modal-draggble .Panel.collapsed {
 			margin-bottom: 0;
 		}
 
-		#sunlight .Row,
-		#sky .Row,
-		#skydome .Row,
-		#clouds .Row,
-		#clouddome .Row,
-		#snows .Row,
-		#rain .Row,
-		#boids .Row,
-		#curlnoise .Row,
-		#curlparticles .Row,
-		#bubbles .Row,
-		#spritebubbles .Row,
-		#smoke .Row,
-		#volumefire .Row,
-		#fireparticles .Row,
-		#proctree .Row,
-		#tufts .Row,
-		#water .Row,
-		#ocean .Row,
-		#ground .Row,
-		#terrain .Row,
-		#gpuparticles .Row,
-		#raymarch .Row
-		{
+		.Modal-draggble .Row {
 			min-height: 20px;
 			margin-bottom: 10px;
 		}
