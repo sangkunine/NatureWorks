@@ -12,16 +12,16 @@
         <script src="dist/natureWorks.min.js"></script>
     </head>
     <body>
-        <div id="novaGraphix"></div>
+        <div id="app-container"></div>
         <script>
-            var novaGraphix = document.getElementById( 'novaGraphix' );
+            var appContainer = document.getElementById( 'app-container' );
             var appWorks = JAMIE.createNatureWorks({
                 width: window.innerWidth,
                 height: window.innerHeight
             });
-            novaGraphix.appendChild( appWorks.dom );
+            appContainer.appendChild( appWorks.dom );
             var appGUI = JAMIE.createNatureGUI( appWorks );
-            novaGraphix.appendChild( appGUI.dom );
+            appContainer.appendChild( appGUI.dom );
         </script>
     </body>
 </html>

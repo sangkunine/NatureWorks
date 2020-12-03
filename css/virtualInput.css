@@ -1,0 +1,74 @@
+
+.virtualInput-joystick{
+  position: absolute;
+  -ms-touch-action : none ;
+      touch-action : none ;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.virtualInput-joystick__frame{
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events:none;
+  opacity: .5;
+}
+.virtualInput-joystick__button{
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: rgba( 255, 255, 255, .5 );
+}
+.virtualInput-joystick__arrowUp,
+.virtualInput-joystick__arrowRight,
+.virtualInput-joystick__arrowDown,
+.virtualInput-joystick__arrowLeft{
+  fill: #fff;
+}
+.virtualInput-joystick__circle{
+  fill: none;
+  stroke: #fff;
+}
+
+
+.virtualInput-button{
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+  display: table;
+  border: 1px solid #333;
+  border-radius: 50%;
+  -ms-touch-action : none ;
+      touch-action : none ;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background: rgba( 255, 255, 255, .5 );
+}
+.virtualInput-button__inner{
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*
+.virtualInput-squareButton{
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  box-sizing: border-box;
+  display: table;
+  border: 1px solid #333;
+  border-radius: 3px;
+  background: rgba( 255, 255, 255, .5 );
+}
+.virtualInput-squareButton__inner{
+  display: table-cell;
+  vertical-align: middle;
+}
+*/
