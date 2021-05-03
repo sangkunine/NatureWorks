@@ -2,7 +2,7 @@ uniform sampler2D t_pos;
 
 void main()
 {
-  vec4 pos = texture( t_pos, position.xy );
+  vec4 pos = texture2D( t_pos, position.xy );
   float dist = length(cameraPosition - pos.xyz);
 
   //gl_PointSize = clamp( 500.0 / dist, 10.0, 50.0 );

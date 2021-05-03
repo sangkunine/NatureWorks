@@ -5,50 +5,12 @@
 // Basic functions
 //==============================================================================
 
-#define GAMMA_FACTOR 2.2
-#define saturate(a) clamp( a, 0.0, 1.0 )
-//#define toneMappingExposure 1.0
-#define toneMappingExposure 0.5
+#define TONE_MAPPING_EXPOSURE 0.4
 
-vec3 LinearToneMapping( vec3 color ) {
-  return toneMappingExposure * color;
-}
-vec3 ReinhardToneMapping( vec3 color ) {
-  color *= toneMappingExposure;
-  return saturate( color / ( vec3( 1.0 ) + color ) );
-}
-// #define Uncharted2Helper( x ) max( ( ( x * ( 0.15 * x + 0.10 * 0.50 ) + 0.20 * 0.02 ) / ( x * ( 0.15 * x + 0.50 ) + 0.20 * 0.30 ) ) - 0.02 / 0.30, vec3( 0.0 ) )
-// vec3 Uncharted2ToneMapping( vec3 color ) {
-//   color *= toneMappingExposure;
-//   return saturate( Uncharted2Helper( color ) / Uncharted2Helper( vec3( toneMappingWhitePoint ) ) );
-// }
-vec3 OptimizedCineonToneMapping( vec3 color ) {
-  color *= toneMappingExposure;
-  color = max( vec3( 0.0 ), color - 0.004 );
-  return pow( ( color * ( 6.2 * color + 0.5 ) ) / ( color * ( 6.2 * color + 1.7 ) + 0.06 ), vec3( 2.2 ) );
-}
 vec3 FilmicToneMapping( vec3 color ) {
-    return (color*(2.51*color + 0.03)) / (color*(2.43*color + 0.59) + 0.14);
+    color *= TONE_MAPPING_EXPOSURE;
+    return saturate( (color*(2.51*color + 0.03)) / (color*(2.43*color + 0.59) + 0.14) );
 }
-vec3 toneMapping( vec3 color ) { return LinearToneMapping( color ); }
-
-vec4 GammaToLinear( in vec4 value, in float gammaFactor ) {
-  return vec4( pow( value.xyz, vec3( gammaFactor ) ), value.w );
-}
-vec4 LinearToGamma( in vec4 value, in float gammaFactor ) {
-  return vec4( pow( value.xyz, vec3( 1.0 / gammaFactor ) ), value.w );
-}
-vec4 sRGBToLinear( in vec4 value ) {
-  return vec4( mix( pow( value.rgb * 0.9478672986 + vec3( 0.0521327014 ), vec3( 2.4 ) ), value.rgb * 0.0773993808, vec3( lessThanEqual( value.rgb, vec3( 0.04045 ) ) ) ), value.w );
-}
-vec4 LinearTosRGB( in vec4 value ) {
-  return vec4( mix( pow( value.rgb, vec3( 0.41666 ) ) * 1.055 - vec3( 0.055 ), value.rgb * 12.92, vec3( lessThanEqual( value.rgb, vec3( 0.0031308 ) ) ) ), value.w );
-}
-
-vec4 mapTexelToLinear( vec4 value ) { return GammaToLinear( value, float( GAMMA_FACTOR ) ); }
-vec4 envMapTexelToLinear( vec4 value ) { return GammaToLinear( value, float( GAMMA_FACTOR ) ); }
-vec4 emissiveMapTexelToLinear( vec4 value ) { return GammaToLinear( value, float( GAMMA_FACTOR ) ); }
-vec4 linearToOutputTexel( vec4 value ) { return LinearToGamma( value, float( GAMMA_FACTOR ) ); }
 
 float pow2( const in float x ) { return x*x; }
 float pow3( const in float x ) { return x*x*x; }
@@ -75,9 +37,9 @@ float rand( in float x ) {
     return fract(sin(dot(vec2(x+47.49,38.2467/(x+2.3)), vec2(12.9898, 78.233)))*(43758.5453));
 }
 
-highp float rand( in vec2 uv ) {
-	const highp float a = 12.9898, b = 78.233, c = 43758.5453;
-	highp float dt = dot( uv.xy, vec2( a,b ) ), sn = mod( dt, PI );
+float rand( in vec2 uv ) {
+	const float a = 12.9898, b = 78.233, c = 43758.5453;
+	float dt = dot( uv.xy, vec2( a,b ) ), sn = mod( dt, PI );
 	return fract(sin(sn) * c);
 }
 

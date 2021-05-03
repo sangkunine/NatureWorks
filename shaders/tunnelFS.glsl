@@ -149,13 +149,13 @@ float map(vec3 p)
     vec2 tun = abs(p.xy - path(p.z))*vec2(0.5, 0.7071);
     tun = pow(tun, vec2(4.));
     float n =1.-pow(tun.x + tun.y, 1.0/4.) + (0.5-surfFunc(p));
-    return min(n, p.y+GROUND_HEIGHT);
+    return min(n, p.y + GROUND_HEIGHT);
 
 #elif defined(ENABLE_MINIMALISTS)
     // For the minimalists. :)
     float n = 0.5-surfFunc(p + 0.25*sign(p.y));
     n = min(GROUND_HEIGHT, 1. - sign(p.y)*n*0.75);
-    return min(-p.y+n, p.y + n);
+    return min(-p.y + n, p.y + n);
 #endif
 }
 
@@ -187,12 +187,13 @@ float calculateAO(vec3 p, vec3 n)
 {
     const float AO_SAMPLES = 5.0;
     float r = 0.0, w = 1.0, d;
-    for (float i=1.0; i<AO_SAMPLES+1.1; i++){
+    for (float i = 1.0; i < AO_SAMPLES + 1.1; i++ )
+    {
         d = i/AO_SAMPLES;
         r += w*(d - map(p + n*d));
-        w *= 0.5;
+        w *= 0.25; // jamie: 0.5 => 0.25
     }
-    return 1.0-clamp(r,0.0,1.0);
+    return 1.0 - saturate(r);
 }
 
 // Cool curve function, by Shadertoy user, Nimitz.
@@ -270,17 +271,17 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 
 #endif
 
-	rd.xy *= rot2( -path(lookAt.z).x/32. );
-    //rd.xz *= rot2( path(lookAt.z).x/32. );
-		
-    // Standard ray marching routine. I find that some system setups don't like anything other than
+	rd.xy *= rot2( -path(lookAt.z).x / 32.0 );
+    // rd.xz *= rot2( path(lookAt.z).x / 32.0 );
+
+    // standard ray marching routine. I find that some system setups don't like anything other than
     // a "break" statement (by itself) to exit. 
 	float t = 0.0, dt;
 	for(int i=0; i<128; i++)
     {
 		dt = map( camPos + rd * t );
-		if( dt < 0.005 || t > 150.0 ){ break; } 
-		t += dt * 0.75;
+		if( dt < 0.005 || t > 150.0 ){ break; }
+        t += dt * 1.1; // jamie: 0.75 => 1.1
 	}
 
 	vec3 sceneCol = vec3(0.0);
@@ -296,7 +297,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	    t += dt;
 
     	// Surface position and surface normal.
-	    vec3 sp = t * rd+camPos;
+	    vec3 sp = t*rd + camPos;
 	    vec3 sn = getNormal(sp);
 
         gl_FragDepth = getFragDepth( sp );
@@ -315,8 +316,8 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	    float ao = calculateAO(sp, sn);
 
     	// Light direction vectors.
-	    vec3 ld = light_pos-sp;
-	    vec3 ld2 = light_pos2-sp;
+	    vec3 ld = light_pos - sp;
+	    vec3 ld2 = light_pos2 - sp;
 
         // Distance from respective lights to the surface point.
 	    float distlpsp = max(length(ld), 0.001);
@@ -327,7 +328,7 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	    ld2 /= distlpsp2;
 
 	    // Light attenuation, based on the distances above.
-	    float atten = min(1./(distlpsp) + 1./(distlpsp2), 1.);
+	    float atten = min(1./(distlpsp) + 1./(distlpsp2), 1.0);
 
     	// Ambient light.
 	    float ambience = 0.25;
@@ -337,14 +338,14 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 	    float diff2 = max( dot(sn, ld2), 0.0);
 
     	// Specular lighting.
-	    float spec = pow(max( dot( reflect(-ld, sn), -rd ), 0.0 ), 8.);
-	    float spec2 = pow(max( dot( reflect(-ld2, sn), -rd ), 0.0 ), 8.);
+	    float spec = pow( max( dot( reflect(-ld, sn), -rd ), 0.0 ), 8.0);
+	    float spec2 = pow( max( dot( reflect(-ld2, sn), -rd ), 0.0 ), 8.0);
 
     	// Curvature.
-	    float crv = clamp(curve(sp, 0.125)*0.5+0.5, .0, 1.);
+	    float crv = saturate(curve(sp, 0.125)*0.5 + 0.5);
 
 	    // Fresnel term. Good for giving a surface a bit of a reflective glow.
-        float fre = pow( clamp(dot(sn, rd) + 1., .0, 1.), 1.);
+        float fre = pow( saturate(dot(sn, rd) + 1.0), 1.0);
 
         // Obtaining the texel color. 
         vec3 texCol;
@@ -370,19 +371,20 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
 #elif defined(ENABLE_SHINY)
         sceneCol = texCol*((diff+diff2)*vec3(1.0, 0.95, 0.9) + ambience + fre*fre*texCol) + (spec+spec2);
 #endif
-        //if( sp.y > -0.995 ) sceneCol += (spec + spec2)*texCol*0.5;
+        // if( sp.y > -0.995 ) sceneCol += (spec + spec2)*texCol*0.5;
 
         // Shading
         sceneCol *= atten * shading * ao;
 
 #ifdef ENABLE_EDGE_EFFECT
-        //sceneCol *= clamp(1.-abs(curve(sp, 0.01)), .0, 1.); // add dense edges
-        sceneCol *= pow(clamp(1.-(curve(sp, 0.0125)), 0., 1.), 0.5); // add thick edges
+        // sceneCol *= saturate(1.0-abs(curve(sp, 0.01))); // add dense edges
+        sceneCol *= pow( saturate(1.0-(curve(sp, 0.0125))), 0.5); // add thick edges
 #endif
 	}
     else gl_FragDepth = 0.99;
 
-	fragColor = vec4( clamp(sceneCol, 0.0, 1.0), 1.0 );
+	// fragColor = vec4( saturate(sceneCol), 1.0 );
+    fragColor = LinearToGamma( vec4( saturate(sceneCol), 1.0), 0.7 ); // jamie
 }
 
 void main()

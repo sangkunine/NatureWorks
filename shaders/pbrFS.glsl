@@ -262,16 +262,16 @@ void getPBRMaterial( in float m, in vec3 p, in vec3 n, out PhysicalMaterial mate
 vec3 getBumpNormal( in float m, in vec3 p, in vec3 n, float bumpFactor )
 // bumpFactor = 0.0075, 0.075
 {
-    vec3 normal = n;
-    for(int i = 0; i<numMaterials; i++)
-    {
-        if( int(m) == i )
-        {
-            if( useAlbedoMaps[i] == 1 )
-                normal = getBumpNormal( albedoMaps[i], p, n, bumpFactor );
-            break;
-        }
-    }
+    // cf: array index for samplers must be constant integral expressions
+    vec3 normal;
+    int i = int( m ); // assume: numMaterials = 4
+
+    if( i == 0 ) normal = getBumpNormal( albedoMaps[ 0 ], p, n, bumpFactor );
+    else if( i == 1 ) normal = getBumpNormal( albedoMaps[ 1 ], p, n, bumpFactor );
+    else if( i == 2 ) normal = getBumpNormal( albedoMaps[ 2 ], p, n, bumpFactor );
+    else if( i == 3 ) normal = getBumpNormal( albedoMaps[ 3 ], p, n, bumpFactor );
+    else normal = n;
+
     return normal;
 }
 #endif

@@ -372,7 +372,7 @@ void main()
 #endif
 
 #ifdef ENABLE_PHONG_LIGHTING
-    col = pow(col, vec3(0.45)); // LinearToGamma
+    col = pow(col, vec3(0.95)); // LinearToGamma
 #else
     col = pow(max(col, 0.0), vec3(0.75));
 #endif

@@ -51,7 +51,8 @@ float aquaTerrainH( vec3 p )
 
 float aquaTerrainMap( vec3 p )
 {
-    return (p.y - aquaTerrainH(p))*1.0;//0.3;
+    // return (p.y - aquaTerrainH(p))*1.0;//0.3
+    return p.y - aquaTerrainH(p);
 }
 
 vec3 aquaTerrainColor( in vec3 rd, in vec3 pos, in vec3 nor )
@@ -550,6 +551,7 @@ vec3 render( in vec3 ro, in vec3 rd )
     col = pow( saturate(col), vec3(0.45) );
     col = mix( col, vec3(dot(col,vec3(0.333))), -0.5 );
 	col = 0.5*col + 0.5*col*col*(3.0-2.0*col);
+    // col *= 0.2 + 0.8*pow( 16.0*q.x*q.y*(1.0-q.x)*(1.0-q.y), 0.1 );
 	col *= smoothstep( 0.0, 1.0, time );
 
 	return col;
@@ -624,5 +626,5 @@ void main()
 
     vec3 col = render( ro, rd );
     col = Vignetting( col, 0.5 );
-    gl_FragColor = vec4( col, 1.0 );
+    gl_FragColor = LinearToGamma( vec4( col, 1.0 ), 0.35 ); // 0.3 ~ 0.5
 }

@@ -1,12 +1,20 @@
 # NatureWorks
 
-![](https://img.shields.io/badge/minzipped_size-4.2MB-blue)
-![](https://img.shields.io/badge/node-v10.14.1-yellow)
-![](https://img.shields.io/badge/npm-6.4.1-yellow)
-![](https://img.shields.io/badge/webpack-4.38.0-yellow)
-![](https://img.shields.io/badge/three.js-r106-green)
+![](https://img.shields.io/badge/minzipped_size-5.3MB-blue)
+![](https://img.shields.io/badge/node-v14.15.1-yellow)
+![](https://img.shields.io/badge/npm-6.14.8-yellow)
+![](https://img.shields.io/badge/webpack-5.10.0-yellow)
+![](https://img.shields.io/badge/three.js-r128-green)
 
 **NatureWorks** is a web-based 3D Nature graphics engine for a realistic real-time rendering of Nature, for example, sky, clouds, snows, rain, fish, bubbles, smoke, fire, tree, flowers, grass, water, ocean, ground, terrain, and their combinations, based on the popular javascript library, [three.js](https://threejs.org/). It will be upgraded for more realistic rendering, and more features of nature will continue to be inserted for more powerful modeling. You can create any natural features or phenomena you imagine in a way you wish through NatureWorks.
+
+<div style="text-align: center;">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/NatureWorks2018_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/windyTerrain_Moment.png" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/woodedMountain_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/snowyCanyon_Moment.png" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/aquariumFish_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/desertCave_Moment.png" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/windingRiver_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/darkTunnel_Moment.png" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/floatingCave_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/sharkHerd_Moment.png" width="24%" style="margin: 1px">
+</div>
 
 ## Main functions
 

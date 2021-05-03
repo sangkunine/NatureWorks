@@ -11,7 +11,8 @@ uniform float curlShape;    // shape of curl (0 ~ 1) ==> 0.0(rocketJet), 0.5(smo
 uniform float curlSpeed;    // moving speed of particles (0 ~ 1)
 uniform float curlSpread;   // level of spread of particles (0 ~ 1)
 
-in vec2 vUv;
+// in vec2 vUv;
+varying vec2 vUv;
 
 @import ./simplex;
 @import ./curl;
@@ -26,8 +27,8 @@ void radialCurl()
   //vec3 emitPos = vec3(0.0);
 
   vec2 uv = gl_FragCoord.xy / resolution;
-  //vec4 oPos = texture( t_oPos, uv );
-  vec4 pos  = texture( t_pos, uv );
+  //vec4 oPos = texture2D( t_oPos, uv );
+  vec4 pos  = texture2D( t_pos, uv );
 
   float shape = mix(0.04, 0.01, curlShape);
   vec3 curl = curlNoise(vec4(pos.xyz * shape, curTime * 1.1 * 2.5)).xyz;
@@ -62,8 +63,8 @@ void directionalCurl()
   float spread = 0.1 + 2.0 * curlSpread;
 
   vec2 uv = gl_FragCoord.xy / resolution;
-  //vec4 oPos = texture( t_oPos, uv );
-  vec4 pos  = texture( t_pos, uv );
+  //vec4 oPos = texture2D( t_oPos, uv );
+  vec4 pos  = texture2D( t_pos, uv );
 
   vec3 curl = curlNoise(vec4(pos.xyz * shape, curTime * 0.5 * speed)).xyz;
   vec3 vel = curl*0.1;

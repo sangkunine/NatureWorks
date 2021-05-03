@@ -130,7 +130,7 @@ varying vec3 vViewPosition;
 #define LOG2 1.442695
 #define EPSILON 1e-6
 #define saturate(a) clamp( a, 0.0, 1.0 )
-#define whiteCompliment(a) ( 1.0 - saturate( a ) )
+#define whiteComplement(a) ( 1.0 - saturate( a ) )
 float pow2( const in float x ) { return x*x; }
 float pow3( const in float x ) { return x*x*x; }
 float pow4( const in float x ) { float x2 = x*x; return x2*x2; }
@@ -1169,7 +1169,7 @@ IncidentLight directLight;
 
 #ifdef USE_FOG
 	#ifdef FOG_EXP2
-		float fogFactor = whiteCompliment( exp2( - fogDensity * fogDensity * fogDepth * fogDepth * LOG2 ) );
+		float fogFactor = whiteComplement( exp2( - fogDensity * fogDensity * fogDepth * fogDepth * LOG2 ) );
 	#else
 		float fogFactor = smoothstep( fogNear, fogFar, fogDepth );
 	#endif

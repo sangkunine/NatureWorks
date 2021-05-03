@@ -6,7 +6,7 @@ void main()
   //vec4 col = vec4( 1.0, 0.3, 0.2, 1.0 );    // red flames
   //vec4 col = vec4( 0.07, 0.09, 0.52, 1.0 );   // blue flames
   vec4 col = vec4( 1.0 );
-  vec4 tex = texture( t_particle, gl_PointCoord );
+  vec4 tex = texture2D( t_particle, gl_PointCoord );
   gl_FragColor = vec4( col.rgb*tex.a, col.a*tex.a );
 }
 

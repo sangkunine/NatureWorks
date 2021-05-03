@@ -200,10 +200,9 @@ void main()
 #endif
 
     vec3 result = sceneColor(ro, rd);
-	result = Vignetting( result, 1.0 );
+	result = Vignetting( result, 0.5 );
     result = FilmicToneMapping( result );
-    //result = result * 1.05 - 0.05;
-    result = LinearToGamma( vec4(result, 1.0), 1.8 ).xyz; //2.2
+    result = LinearToGamma( vec4(result, 1.0), 0.9 ).xyz; //2.2
 
 	gl_FragColor = vec4(result, 1.0);
 }
