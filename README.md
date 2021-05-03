@@ -1,5 +1,9 @@
 # NatureWorks
 
+<a href="https://www.youtube.com/channel/UChK_R6Dc3ar2kFUdFB53g5w/videos" title="click here for NovaGraphix's YouTube channel">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/NatureWorks2018_Moment.jpg" width="24%" style="margin: 1px">
+</a>
+
 ![](https://img.shields.io/badge/minzipped_size-5.3MB-blue)
 ![](https://img.shields.io/badge/node-v14.15.1-yellow)
 ![](https://img.shields.io/badge/npm-6.14.8-yellow)
@@ -9,11 +13,39 @@
 **NatureWorks** is a web-based 3D Nature graphics engine for a realistic real-time rendering of Nature, for example, sky, clouds, snows, rain, fish, bubbles, smoke, fire, tree, flowers, grass, water, ocean, ground, terrain, and their combinations, based on the popular javascript library, [three.js](https://threejs.org/). It will be upgraded for more realistic rendering, and more features of nature will continue to be inserted for more powerful modeling. You can create any natural features or phenomena you imagine in a way you wish through NatureWorks.
 
 <div style="text-align: center;">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/NatureWorks2018_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/windyTerrain_Moment.png" width="24%" style="margin: 1px">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/woodedMountain_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/snowyCanyon_Moment.png" width="24%" style="margin: 1px">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/aquariumFish_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/desertCave_Moment.png" width="24%" style="margin: 1px">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/windingRiver_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/darkTunnel_Moment.png" width="24%" style="margin: 1px">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/floatingCave_Moment.png" width="24%" style="margin: 1px"> <img src="https://sangkunine.github.io/natureWorks/images/demo/sharkHerd_Moment.png" width="24%" style="margin: 1px">
+
+<a href="https://www.youtube.com/watch?v=dyTR0QwO0f0" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/windyTerrain_Moment.jpg" width="24%" style="margin: 1px">
+</a>
+
+<a href="https://www.youtube.com/watch?v=v-Q2cD27jGc" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/woodedMountain_Moment.jpg" width="24%" style="margin: 1px"> 
+</a>
+
+<a href="https://www.youtube.com/watch?v=Pkw-hHLoYRU" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/snowyCanyon_Moment.jpg" width="24%" style="margin: 1px">
+</a>
+
+<a href="https://www.youtube.com/watch?v=ZBYj8Rt8WWU" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/aquariumFish_Moment.jpg" width="24%" style="margin: 1px"> 
+</a>
+
+<a href="https://www.youtube.com/watch?v=Y-VRa32v79s" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/windingRiver_Moment.jpg" width="24%" style="margin: 1px"> 
+</a>
+
+<a href="https://www.youtube.com/watch?v=noaDNz_fFg4" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/darkTunnel_Moment.jpg" width="24%" style="margin: 1px">
+</a>
+
+<a href="https://www.youtube.com/watch?v=VYRiIflwX28" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/floatingCave_Moment.jpg" width="24%" style="margin: 1px"> 
+</a>
+
+<a href="https://www.youtube.com/watch?v=uW9iR3bVI2k" title="click here to watch this video on YouTube">
+<img src="https://sangkunine.github.io/natureWorks/images/demo/sharkHerd_Moment.jpg" width="24%" style="margin: 1px">
+</a>
+
 </div>
 
 ## Main functions
