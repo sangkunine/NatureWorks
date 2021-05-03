@@ -1,9 +1,5 @@
 # NatureWorks
 
-<a href="https://www.youtube.com/channel/UChK_R6Dc3ar2kFUdFB53g5w/videos" title="click here for NovaGraphix's YouTube channel">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/NatureWorks2018_Moment.jpg" width="24%" style="margin: 1px">
-</a>
-
 ![](https://img.shields.io/badge/minzipped_size-5.3MB-blue)
 ![](https://img.shields.io/badge/node-v14.15.1-yellow)
 ![](https://img.shields.io/badge/npm-6.14.8-yellow)
@@ -50,7 +46,7 @@
 
 ## Main functions
 
-This application provides various functions such as undo/redo, auto saving, scene graph, multiple selections, different controls (camera controls, transform controls, and drag controls), texture map libraries (matcap material library & normal map library), boolean operations (union, intersect, and subtract), and importing 3D model files (11 file formats supported). In addition, it includes user interface elements such as drop-down menus, sidebar, context menu, tooltip, modal popups, and drag & drop. It also has a structure for multiple languages and allows five themes (blue, dark, light, teal, transparent).
+This application provides various functions such as **undo/redo, auto saving, scene graph, multiple selections, different controls (camera controls, transform controls, and drag controls), texture map libraries (matcap material library & normal map library), boolean operations (union, intersect, and subtract), and importing 3D model files (11 file formats supported)**. In addition, it includes user interface elements such as drop-down menus, sidebar, context menu, tooltip, modal popups, and drag & drop. It also has a structure for multiple languages and allows five themes (blue, dark, light, teal, transparent).
 
 ## Website
 You can run this application at the website: https://sangkunine.github.io/natureWorks/.
@@ -58,7 +54,7 @@ You can run this application at the website: https://sangkunine.github.io/nature
 ## Highlighted features
 
 - Nature assets<br>
-This application provides 23 different kinds of realistic natures for non-experts. They are sunlight, sky (sky dome), clouds (cloud dome), snows, rain, boids(e.g., a school of fish), curl noise, curl particles, bubbles (sprite bubbles), smoke, volume fire, fire particles, tree, tufts(e.g., flower, grass), water, ocean, ground, terrain, gpu particles, and raymarch-based natures (e.g., terrain, tunnel, galaxy, mountains, canyon, caves, sea, river, forest, fish, etc)”. Note that the raymarch-based natures were inspired by [Shadertoy](https://www.shadertoy.com).
+This application provides 23 different kinds of realistic natures for non-experts. They are **sunlight, sky (sky dome), clouds (cloud dome), snows, rain, boids(e.g., a school of fish), curl noise, curl particles, bubbles (sprite bubbles), smoke, volume fire, fire particles, tree, tufts(e.g., flower, grass), water, ocean, ground, terrain, gpu particles, and raymarch-based natures (e.g., terrain, tunnel, galaxy, mountains, canyon, caves, sea, river, forest, fish, etc)**. Note that raymarch-based natures were inspired by [Shadertoy](https://www.shadertoy.com).
 
 - Undo / redo<br>
 The undo function is used to erase the last change done to the document reverting it to an older state. And redo is used to rerun the recent actions you undid. Note that there is no limit to the number of undo operations.
@@ -75,7 +71,7 @@ You can apply Matcap material to an object using the Matcap material library of 
 - Normal map library<br>
 You can adjust the normal map of material through the 26 normal textures and normal scale adjustments.
 
-- Boolean operations
+- Boolean operations<br>
     - union: it obtains the union of two meshes.
     - intersect: it gets the intersection of two meshes.
     - subtract: tt obtains the difference set between two meshes.
@@ -139,4 +135,4 @@ NatureWorks can be used in such applications as video games, movie making, GIS s
 
 Please contact us at <info@nova-graphix.com> for any question or suggestion.
 
-Thank you for reading the above description on **NatureWorks**, developed by [NovaGraphix, Co.](https://www.nova-graphix.com/) Note that we will continue to add new features and technologies.
+Thank you for reading the above description on **NatureWorks**, developed by [NovaGraphix, Co.](https://www.youtube.com/channel/UChK_R6Dc3ar2kFUdFB53g5w/videos) Note that we will continue to add new features and technologies.
