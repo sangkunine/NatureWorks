@@ -11,35 +11,35 @@
 <div style="text-align: center;">
 
 <a href="https://www.youtube.com/watch?v=dyTR0QwO0f0" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/windyTerrain_Moment.jpg" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/windyTerrain_Moment.jpg" width="24%" style="margin: 1px">
 </a>
 
 <a href="https://www.youtube.com/watch?v=v-Q2cD27jGc" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/woodedMountain_Moment.jpg" width="24%" style="margin: 1px"> 
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/woodedMountain_Moment.jpg" width="24%" style="margin: 1px"> 
 </a>
 
 <a href="https://www.youtube.com/watch?v=Pkw-hHLoYRU" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/snowyCanyon_Moment.jpg" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/snowyCanyon_Moment.jpg" width="24%" style="margin: 1px">
 </a>
 
 <a href="https://www.youtube.com/watch?v=ZBYj8Rt8WWU" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/aquariumFish_Moment.jpg" width="24%" style="margin: 1px"> 
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/aquariumFish_Moment.jpg" width="24%" style="margin: 1px"> 
 </a>
 
 <a href="https://www.youtube.com/watch?v=Y-VRa32v79s" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/windingRiver_Moment.jpg" width="24%" style="margin: 1px"> 
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/windingRiver_Moment.jpg" width="24%" style="margin: 1px"> 
 </a>
 
 <a href="https://www.youtube.com/watch?v=noaDNz_fFg4" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/darkTunnel_Moment.jpg" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/darkTunnel_Moment.jpg" width="24%" style="margin: 1px">
 </a>
 
 <a href="https://www.youtube.com/watch?v=VYRiIflwX28" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/floatingCave_Moment.jpg" width="24%" style="margin: 1px"> 
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/floatingCave_Moment.jpg" width="24%" style="margin: 1px"> 
 </a>
 
 <a href="https://www.youtube.com/watch?v=uW9iR3bVI2k" title="click here to watch this video on YouTube">
-<img src="https://sangkunine.github.io/natureWorks/images/demo/sharkHerd_Moment.jpg" width="24%" style="margin: 1px">
+<img src="https://sangkunine.github.io/NatureWorks/images/demo/sharkHerd_Moment.jpg" width="24%" style="margin: 1px">
 </a>
 
 </div>
@@ -49,7 +49,7 @@
 This application provides various functions such as **undo/redo, auto saving, scene graph, multiple selections, different controls (camera controls, transform controls, and drag controls), texture map libraries (matcap material library & normal map library), boolean operations (union, intersect, and subtract), and importing 3D model files (11 file formats supported)**. In addition, it includes user interface elements such as drop-down menus, sidebar, context menu, tooltip, modal popups, and drag & drop. It also has a structure for multiple languages and allows five themes (blue, dark, light, teal, transparent).
 
 ## Website
-You can run this application at the website: https://sangkunine.github.io/natureWorks/.
+You can run this application at the website: https://sangkunine.github.io/NatureWorks/.
 
 ## Highlighted features
 
